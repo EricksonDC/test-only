@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASENSO - Frequently Asked Questions</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 16px;
+        }
+        h1 {
+            font-size: 22px;
+            color: #1a237e;
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 16px 0;
+        }
+        .category {
+            margin-bottom: 16px;
+        }
+        .category-title {
+            background: #1a237e;
+            color: #fff;
+            padding: 14px 16px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px 8px 0 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .category-title::after {
+            content: '\25BC';
+            font-size: 12px;
+            transition: transform 0.3s;
+        }
+        .category-title.active::after {
+            transform: rotate(180deg);
+        }
+        .category-content {
+            display: none;
+            background: #fff;
+            border-radius: 0 0 8px 8px;
+            overflow: hidden;
+        }
+        .category-content.show { display: block; }
+        .question {
+            border-bottom: 1px solid #eee;
+        }
+        .question-title {
+            padding: 12px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a237e;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f9ff;
+        }
+        .question-title::after {
+            content: '+';
+            font-size: 18px;
+            font-weight: bold;
+            color: #1a237e;
+            min-width: 20px;
+            text-align: center;
+        }
+        .question-title.active::after { content: '\2212'; }
+        .question-body {
+            display: none;
+            padding: 12px 16px;
+        }
+        .question-body.show { display: block; }
+        .question-desc {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 12px;
+        }
+        .note {
+            background: #fff3e0;
+            border-left: 3px solid #ff9800;
+            padding: 10px 12px;
+            margin: 10px 0;
+            font-size: 12px;
+            color: #e65100;
+            border-radius: 0 4px 4px 0;
+        }
+        .step {
+            margin-bottom: 16px;
+            padding-left: 8px;
+        }
+        .step-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .step-number {
+            background: #1a237e;
+            color: #fff;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .step-text {
+            font-size: 13px;
+            color: #333;
+            white-space: pre-line;
+        }
+        .step-image {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        .sub-items {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+        .sub-item {
+            font-size: 12px;
+            color: #555;
+            padding: 3px 0;
+            display: flex;
+            gap: 6px;
+        }
+        .sub-item-bullet {
+            color: #1a237e;
+            font-weight: bold;
+        }
+        .sub-section-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            margin: 8px 0 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Frequently Asked Questions</h1>
+    <div id="faq-container"></div>
+
+    <script>
+    const faqData = [
+    {
+        "title": "Download the APP",
+        "ds_1": [{
+            "ds1_id": "1.1",
+            "title": "How can I download the APP on my Phone?",
+            "desc": "Downloading the APP is as easy as downloading any other app on your phone. Below are the steps to be followed to download the APP:",
+            "note1": null,
+            "note2": null,
+            "ds_2": [{
+                "ds2_id": "1.1.1",
+                "ds2_title": "Go to Play Store",
+                "imagePath":"img/faq/1/1a.webp"
+            },{
+                "ds2_id": "1.1.2",
+                "ds2_title": "In search field, type ASENSO MOBILE APP",
+                "imagePath":"img/faq/1/1b.webp"
+            },{
+                "ds2_id": "1.1.3",
+                "ds2_title": "Choose ASENSO MOBILE APP to proceed downloading the app.",
+                "imagePath":"img/faq/1/1c.webp"
+            },{
+                "ds2_id": "1.1.4",
+                "ds2_title": "Click “Install”",
+                "imagePath":"img/faq/1/1d.webp"
+            },{
+                "ds2_id": "1.1.5",
+                "ds2_title": "Open the installed APP",
+                "imagePath":"img/faq/1/1e.webp"
+            },{
+                "ds2_id": "1.1.6",
+                "ds2_title": "Allow the APP to access different functions of the device.",
+                "imagePath":"img/faq/1/1f.webp"
+            }]
+        }]
+    },
+    {
+        "title": "Sign Up/Open an Account",
+        "ds_1": [{
+            "ds1_id": "2.1",
+            "title": "How to Sign Up/Open an Account in the APP?",
+            "desc": "Follow the easy steps below to sign up/Open an account in the APP:",
+            "note1": null,
+            "note2": null,
+            "ds_2": [{
+                "ds2_id": "2.1.1",
+                "ds2_title": "Open the Downloaded APP.",
+                "imagePath":"img/faq/2/1/a/1.webp"
+            },{
+                "ds2_id": "2.1.2",
+                "ds2_title": "Click “Sign up”",
+                "imagePath":"img/faq/2/1/a/2.webp"
+                
+            },{
+                "ds2_id": "2.1.3",
+                "ds2_title": "Accept the “Terms and Conditions”",
+                "imagePath":"img/faq/2/1/a/4.webp"
+            },{
+                "ds2_id": "2.1.4",
+                "ds2_title": "Provide the following information:",
+                "imagePath":"img/faq/2/1/a/5.1.webp",
+                "ds_3": [{
+                    "ds3_id": "2.1.4.1",
+                    "ds3_title": "Basic information",
+                    "ds_4": [{
+                        "ds4_id": "2.1.4.1.1",
+                        "ds4_title": "Mobile number",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.1.2",
+                        "ds4_title": "First Name",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.1.3",
+                        "ds4_title": "Middle Name",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.1.4",
+                        "ds4_title": "Last Name",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.1.5",
+                        "ds4_title": "Birth place",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.1.6",
+                        "ds4_title": "Birth date",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.1.7",
+                        "ds4_title": "Gender",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.1.8",
+                        "ds4_title": "Civil status",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.1.9",
+                        "ds4_title": "Authentication code to be sent to the mobile number provided",
+                        "ds_5": []
+                    }]
+                },
+                {
+                    "ds3_id": "2.1.4.2",
+                    "ds3_title": "Additional information:",
+                    "ds_4": [{
+                        "ds4_id": "2.1.4.2.1",
+                        "ds4_title": "Nationality",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.2.2",
+                        "ds4_title": "Facebook Account (optional)",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.2.3",
+                        "ds4_title": "Viber Account (Optional)",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.2.4",
+                        "ds4_title": "Mother’s Maiden Name",
+                        "ds_5": [{
+                            "ds5_id": "2.1.4.2.4.1",
+                            "ds5_title": "First Name"
+                        },
+                        {
+                            "ds5_id": "2.1.4.2.4.2",
+                            "ds5_title": "Middle Name (if applicable)"
+                        },
+                        {
+                            "ds5_id": "2.1.4.2.4.3",
+                            "ds5_title": "Last name"
+                        }]
+                    }]
+                },
+                {
+                    "ds3_id": "2.1.4.3",
+                    "ds3_title": "Address",
+                    "ds_4": [{
+                        "ds4_id": "2.1.4.3.1",
+                        "ds4_title": "Present Address",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.3.2",
+                        "ds4_title": "Region",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.3.3",
+                        "ds4_title": "Province",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.3.4",
+                        "ds4_title": "City",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.3.5",
+                        "ds4_title": "Barangay",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.3.6",
+                        "ds4_title": "Address details",
+                        "ds_5": []
+                    }]
+                },
+                {
+                    "ds3_id": "2.1.4.4",
+                    "ds3_title": "Permanent Address (may be same as Present Address)",
+                    "ds_4": [{
+                        "ds4_id": "2.1.4.4.1",
+                        "ds4_title": "Region",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.4.2",
+                        "ds4_title": "Province",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.4.3",
+                        "ds4_title": "City",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.4.4",
+                        "ds4_title": "Barangay",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.4.5",
+                        "ds4_title": "Address details",
+                        "ds_5": []
+                    }]
+                },
+                {
+                    "ds3_id": "2.1.4.5",
+                    "ds3_title": "Emergency Contact Person",
+                    "ds_4": [{
+                        "ds4_id": "2.1.4.5.1",
+                        "ds4_title": "Name",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.5.2",
+                        "ds4_title": "Phone Number",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.5.3",
+                        "ds4_title": "Relationship",
+                        "ds_5": []
+                    }]
+                },
+                {
+                    "ds3_id": "2.1.4.6",
+                    "ds3_title": "Capture Selfie Photo",
+                    "ds_4": [{
+                        "ds4_id": "2.1.4.6.1",
+                        "ds4_title": "Normal",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.6.2",
+                        "ds4_title": "Smiling",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.6.3",
+                        "ds4_title": "Closed Eyes",
+                        "ds_5": []
+                    }]
+                },
+                {
+                    "ds3_id": "2.1.4.7",
+                    "ds3_title": "ID details and Photo",
+                    "ds_4": [{
+                        "ds4_id": "2.1.4.7.1",
+                        "ds4_title": "ID type",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.7.2",
+                        "ds4_title": "ID number",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.7.3",
+                        "ds4_title": "Expiration date (if there is)",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.7.4",
+                        "ds4_title": "Capture Front ID Photo",
+                        "ds_5": []
+                    },
+                    {
+                        "ds4_id": "2.1.4.7.5",
+                        "ds4_title": "Capture Back ID Photo",
+                        "ds_5": []
+                    }]
+                },
+                {
+                    "ds3_id": "2.1.4.8",
+                    "ds3_title": "Write 3 Specimen Signatures",
+                    "ds_4": []
+                },
+                {
+                    "ds3_id": "2.1.4.9",
+                    "ds3_title": "Password",
+                    "ds_4": []
+                }]
+            },{
+                "ds2_id": "2.1.5",
+                "ds2_title": "After providing all required information click the submit/next button.",
+                "imagePath":"img/faq/2/1/a/5.webp"
+            },{
+                "ds2_id": "2.1.6",
+                "ds2_title": "Request for Sign up/Account Opening shall be subject for verification. An SMS notifying the client that the Sign up/Account Opening was successfully submitted shall be received.",
+                "imagePath":"img/faq/2/1/a/6.webp"
+            },{
+                "ds2_id": "2.1.7",
+                "ds2_title": "After verification a Welcome SMS will be sent to your registered number.",
+                "imagePath":"img/faq/2/1/a/8.webp"
+            },{
+                "ds2_id": "2.1.8",
+                "ds2_title": "By then, Login using the registered number and nominated Password. Please remember your PASSWORD to be able to access and transact with the APP. PASSWORD should be personal and never be shared with anyone to avoid misuse of your account.",
+                "imagePath":"img/faq/2/1/a/10.1.webp"
+            }]
+        }]
+    },
+    {
+        "title": "Password",
+        "ds_1": [{
+            "ds1_id": "3.1",
+            "title": "How can I change my PASSWORD.",
+            "desc": "Follow these simple steps to change your PASSWORD.",
+            "note1": "Please remember your NEW PASSWORD to be able to access and transact with the APP. PASSWORD should be personal and never share be shared with anyone to avoid misuse of your account.",
+            "note2": null,
+            "ds_2": [{
+                "ds2_id": "3.1.1",
+                "ds2_title": "Login to the APP using your current PASSWORD.",
+                "imagePath":"img/faq/3/1/2a.webp"
+            },{
+                "ds2_id": "3.1.2",
+                "ds2_title": "Click Settings.",
+                "imagePath":"img/faq/3/1/2b.webp"
+            },{
+                "ds2_id": "3.1.3",
+                "ds2_title": "Select Security.",
+                "imagePath":"img/faq/3/1/2c.webp"
+            },{
+                "ds2_id": "3.1.4",
+                "ds2_title": "Click Change Password.",
+                "imagePath":"img/faq/3/1/2d.webp"
+            },{
+                "ds2_id": "3.1.5",
+                "ds2_title": "Enter your current password.",
+                "imagePath":"img/faq/3/1/2e.webp"
+            },{
+                "ds2_id": "3.1.6",
+                "ds2_title": "Enter your new password.",
+                "imagePath":"img/faq/3/1/2f.webp"
+            },{
+                "ds2_id": "3.1.6",
+                "ds2_title": "A prompt shall appear confirming that you have successfully changed your password.",
+                "imagePath":"img/faq/3/1/2g.webp"
+            }
+        ]
+        },
+        {
+            "ds1_id": "3.2",
+            "title": "What should I do if I forgot my PASSWORD?",
+            "desc": "Follow these simple steps to Reset your PASSWORD.",
+            "note1": "Please remember your NEW PASSWORD to be able to access and transact with the APP. PASSWORD should be personal and never share be shared with anyone to avoid misuse of your account.",
+            "note2": null,
+            "ds_2": [{
+                "ds2_id": "3.2.1",
+                "ds2_title": "In login page, click “Report/Change/Reset”",
+                "imagePath":"img/faq/3/3/a.webp"
+            },{
+                "ds2_id": "3.2.2",
+                "ds2_title": "Click “Forgot Pin/Password.\n\nA prompt message will appear notifying you that you need to undergo verification to check if you are the true owner of the account for security purposes.”",
+                "imagePath":"img/faq/3/3/b.webp"
+            },{
+                "ds2_id": "3.2.3",
+                "ds2_title": "You will be redirected to Reset PIN page. You will be asked about the Number of accounts.",
+                "imagePath":"img/faq/3/3/c1.webp"
+            },{
+                "ds2_id": "3.2.4",
+                "ds2_title": "Answer Security Questions, then click next.\nNote: Make sure to provide the correct information to avoid blockage of the feature.",
+                "imagePath":"img/faq/3/3/c2.webp"
+            },{
+                "ds2_id": "3.2.5",
+                "ds2_title": "Enter new PIN/Password",
+                "imagePath":"img/faq/3/3/c3.webp"
+            },{
+                "ds2_id": "3.2.6",
+                "ds2_title": "A prompt shall appear confirming that you have successfully changed the password.",
+                "imagePath":"img/faq/3/3/d.webp"
+            }]
+        }]
+    },
+    {
+        "title": "Registered Number",
+        "ds_1": [{
+            "ds1_id": "4.1",
+            "title": "What should I do if I have changed my number?",
+            "desc": "Follow these simple steps to change your registered number in the APP:",
+            "note1": null,
+            "note2": null,
+            "ds_2": [{
+                "ds2_id": "4.1.1",
+                "ds2_title": "Open the App, and click “LOGIN”.",
+                "imagePath":"img/faq/4/1/a.webp"
+            },{
+                "ds2_id": "4.1.2",
+                "ds2_title": "In login page, click “Report/Change/Reset”\n\nThen click “Change the phone number used to access the account”.",
+                "imagePath":"img/faq/4/1/b.webp"
+            },{
+                "ds2_id": "4.1.3",
+                "ds2_title": "Click “Ok” in the message prompt.\n\nEnter your current password.\n\nProvide your set Security question and answer.\n\nEnter your new password.",
+                "imagePath":"img/faq/4/1/b1.webp"
+            },{
+                "ds2_id": "4.1.4",
+                "ds2_title": "Enter your new number to be registered.\n\nThen, input the verification code sent to your new number and click  “Submit",
+                "imagePath":"img/faq/4/1/b2.webp"
+            },{
+                "ds2_id": "4.1.5",
+                "ds2_title": "A prompt shall appear confirming that you had been changed your number and will receive a notification about the request",
+                "imagePath":"img/faq/4/1/b3.webp"
+            },{
+                "ds2_id": "4.1.6",
+                "ds2_title": "An SMS and Email notification will be received once the request is approved.",
+                "imagePath":"img/faq/4/1/b4.webp"
+            }]
+        }]
+    },
+    {
+        "title": "Registered Device",
+        "ds_1": [{
+            "ds1_id": "5.1",
+            "title": "What should I do if I have changed my device?",
+            "desc": "Follow this simple steps to change your registered device in the APP:",
+            "note1": null,
+            "note2": null,
+            "ds_2": [{
+                "ds2_id": "5.1.1",
+                "ds2_title": "Open the App, and click “LOGIN”.",
+                "imagePath":"img/faq/5/1/a.webp"
+            },{
+                "ds2_id": "5.1.2",
+                "ds2_title": "Enter your mobile number then click “Report/Change/Reset”",
+                "imagePath":"img/faq/5/1/c.webp"
+            },{
+                "ds2_id": "5.1.3",
+                "ds2_title": "You will be redirected to “Report or Change” page and select “Change the device used to access the account”\n\nClick “Ok” in the message prompt.\n\nEnter your current pin and provide your set Security question and answer.\n\nEnter your new pin and confirm the changes.",
+                "imagePath":"img/faq/5/1/g.webp"
+            },{
+                "ds2_id": "5.1.4",
+                "ds2_title": "An SMS and Email notification will be received once the request is approved.",
+                "imagePath":"img/faq/5/1/h.webp"
+
+            }]
+
+        },
+        {
+            "ds1_id": "5.2",
+            "title": "What to should i do if change device\nfeature was blocked?",
+            "desc": "Follow this simple steps to still get an access to your account even the Change device feature was blocked.",
+            "note1": "Feature was blocked and you will be asked to take a selfie for verification",
+            "note2": null,
+            "ds_2": [{
+                "ds2_id": "5.2.1",
+                "ds2_title": "Once you have provided incorrect information 3 times in this feature you will be asked to take 3 selfies (Normal, Smiling and closed eyes) after the 3rd attempt.",
+                "imagePath":"img/faq/5/2/a.webp"
+            },{
+                "ds2_id": "5.2.2",
+                "ds2_title": "Set your new desired PIN code.",
+                "imagePath":"img/faq/5/2/a1.webp"
+            },{
+                "ds2_id": "5.2.3",
+                "ds2_title": "After nominating new PIN you will be redirected to the selfie verification page. Click Allow if you will be ask to allow ASENSO App to record audio and to take pictures and record video, then take 3 selfie picture, this will be subject for verification and approval.",
+                "imagePath":"img/faq/5/2/a2.webp"
+            },{
+                "ds2_id": "5.2.4",
+                "ds2_title": "After taking selfies click the submit button. Once the request is submitted a prompt will notify you that the request was successfully submitted and that it will be subject for approval of CSR",
+                "imagePath":"img/faq/5/2/a3.webp"
+            },{
+                "ds2_id": "5.2.5",
+                "ds2_title": "An SMS and Email notification will be received once the request is approved.",
+                "imagePath":"img/faq/5/2/a4.webp"
+            }]
+
+        }]
+    },
+    {
+        "title": "Report",
+        "ds_1": [{
+            "ds1_id": "6.1",
+            "title": "How to report lost/stolen/hacked\nnumber and device?",
+            "desc": "Your device was lost, stolen or may be hacked and your registered number in ASENSO APP was in that device, now you are worried that someone might be able to use your account and transact using the Application. Act fast before all your balances in your account is used by the person who has your device and registered number. Follow the following steps to make sure that no one can access your account once you encountered this incident:",
+            "note1": null,
+            "note2": null,
+            "ds_2": [{
+                "ds2_id": "6.1.1",
+                "ds2_title": "Open the App, and click “LOGIN”.\n\nEnter your number then click “Report or change” ",
+                "imagePath":"img/faq/6/1/b.webp"
+            },{
+                "ds2_id": "6.1.2",
+                "ds2_title": "You will be redirected to the Report or Change page.\n\nYour registered number will be asked. Input the your registered number then click submit.",
+                "imagePath":"img/faq/6/1/d.webp"
+            },{
+                "ds2_id": "6.1.3",
+                "ds2_title": "The number you have entered will be verified if it is really registered in ASENSO APP. If the number that you have provided is verified as registered you will be redirected to a page where you will be asked of your reason to deactivate your account.\n\nA Message will appear regarding verification of the account, click OK.",
+                "imagePath":"img/faq/6/1/f.webp"
+            },{
+                "ds2_id": "6.1.4",
+                "ds2_title": "You will be redirected to the Report page where the following information will be asked to verify that you are the real owner of the account:\n1.First Name\n2.Middle Name\n3.Last Name\n4.Email Address\n5.PIN\n6.Security question and answer.",
+                "imagePath":"img/faq/6/1/i.webp"
+            },{
+                "ds2_id": "6.1.5",
+                "ds2_title": "A confirmation message will appear notifying you if you are sure you want to report lost/stolen/hacked device and number, click REPORT to proceed.",
+                "imagePath":"img/faq/6/1/i1.webp"
+            },{
+                "ds2_id": "6.1.6",
+                "ds2_title": "A notification will prompt that the process was successful. An Email notification will also be received by the registered Email address.\n\nYour have reported your registered device and number as lost/stolen/hacked and its already blocked to avoid unauthorized person to access your account in ASENSO APP.",
+                "imagePath":"img/faq/6/1/i2.webp"
+            }]
+        },
+        {
+            "ds1_id": "6.2",
+            "title": "What should i do if lost/stolen/hacked\ndevice/number feature was blocked?",
+            "desc": "Your device was lost, stolen or may be hacked and your registered number in ASENSO APP was in that device, now you are worried that someone might be able to use your account so you tried to report the incident using other device with instilled ASENSO APP, but when you’re reporting the incident you have forgotten some of the information being asked that caused the feature blocked. To avoid unauthorized transaction and to make sure that no one will be able to access your account using your lost number and device follow the following procedure:",
+            "note1": "Feature was blocked and you will be asked to take a selfie for verification",
+            "note2": null,
+            "ds_2": [{
+                "ds2_id": "6.2.1",
+                "ds2_title": "Once you have provided incorrect information 3 times in this feature you will be asked to take 3 selfies (Normal, Smiling and closed eyes) after the 3rd attempt.",
+                "imagePath":"img/faq/6/2/a.webp"
+            },{
+                "ds2_id": "6.2.2",
+                "ds2_title": "Set your new desired PIN code.",
+                "imagePath":"img/faq/6/2/a1.webp"
+            },{
+                "ds2_id": "6.2.3",
+                "ds2_title": "After nominating new PIN you will be redirected to the selfie verification page. Click Allow if you will be ask to allow ASENSO App to record audio and to take pictures and record video, then take 3 selfie picture, this will be subject for verification and approval.",
+                "imagePath":"img/faq/5/2/a3.webp"
+            },{
+                "ds2_id": "6.2.4",
+                "ds2_title": "A prompt message will appear, indicating that your request was successfully submitted for verification.",
+                "imagePath":"img/faq/5/2/a4.webp"
+            },{
+                "ds2_id": "6.2.5",
+                "ds2_title": "An Email notification will be received once the request is approved.\n\nIn case the device and number was stolen or hacked and the feature (Forgot PIN) was used to gain access to the account the selfie of the maker of the request will be checked with the photo of the client taken during the account opening/updating. The CSR shall disapprove the request if the selfies and the photo does not matched.",
+                "imagePath":"img/faq/5/2/a5.webp"
+            }]
+        }]
+    },
+    {
+        "title": "Unblock Reported Account",
+        "ds_1": [{
+            "ds1_id": "7.1",
+            "title": "How can i unblocked my account that I\nhave previously reported as lost/stolen/hacked?",
+            "desc": "You feel relief after making sure that no one will be able to access you account in ASENSO APP after reporting it as lost, stolen or hacked. Now, you have new phone number and a new android device and you have downloaded ASENSO App, you want to access your account once again but due to the action that you have done before it was blocked. To unblocked your account follow the following procedure:",
+            "note1": null,
+            "note2": null,
+            "ds_2": [{
+                "ds2_id": "7.1.1",
+                "ds2_title": "Open the App, and click “LOGIN”.\n\nEnter your number then click “Report or change”. ",
+                "imagePath":"img/faq/7/1/b.webp"
+            },{
+                "ds2_id": "7.1.2",
+                "ds2_title": "You will be redirected to the Report or Change page. Click Change the phone number and device used to access the account\n\nYour registered number will be asked. Input the your registered number then click submit. ",
+                "imagePath":"img/faq/7/1/d.webp"
+            },{
+                "ds2_id": "7.1.3",
+                "ds2_title": "The number that you have entered will be verified if it is really registered in ASENSO APP. If the number that you have provided is verified as registered you will be redirected to Change number and device page where a message will appear informing you that to proceed with the process the account will be verified if it belongs to you, click OK.",
+                "imagePath":"img/faq/7/1/e.webp"
+            },{
+                "ds2_id": "7.1.4",
+                "ds2_title": "The following information will be asked to verify that the account belongs to you:\ni.Current PIN\nii.Security question and answer",
+                "imagePath":"img/faq/7/1/f.webp"
+            },{
+                "ds2_id": "7.1.5",
+                "ds2_title": "Once you have provided the correct PIN, security question and answer you will be asked to nominate new PIN and the new number to register. The new number you are registering will undergo verification by sending verification code to the given number to check if the number that you have provided is active.",
+                "imagePath":"img/faq/7/1/g.webp"
+            },{
+                "ds2_id": "7.1.6",
+                "ds2_title": "Input the verification code that you have received the click submit. If the verification code that you have inputted is correct a message will appear notifying you that once you have submitted the process you cannot undo it. Click CHANGE.",
+                "imagePath":"img/faq/7/1/h.webp"
+            },{
+                "ds2_id": "7.1.7",
+                "ds2_title": "Once you have clicked the CHANGE button a prompt will notify you that you have successfully changed your registered number and device.",
+                "imagePath":"img/faq/7/1/i.webp"
+            },{
+                "ds2_id": "7.1.8",
+                "ds2_title": "An SMS and Email notification will also be received by the registered number and registered Email address.\n\nYour registered number and device is now changed, now you can an completely relax and make any transaction in ASENSO APP.",
+                "imagePath":"img/faq/7/1/j.webp"
+            }]
+        }]
+    },
+    {
+        "title": "Change device/number feature\nhas been blocked",
+        "ds_1": [{
+            "ds1_id": "7.2",
+            "title": "What should  I do if the Change device/number\nfeature has been blocked?",
+            "desc": "Follow this simple steps to access your account even if the change device/number feature has been blocked",
+            "note1": null,
+            "note2": null,
+            "ds_2": [{
+                "ds2_id": "7.2.1",
+                "ds2_title": "Once you have provided incorrect information 3 times in this feature you will be asked to take 3 selfies (Normal, Smiling and closed eyes) after the 3rd attempt. ",
+                "imagePath":"img/faq/7/2/a.webp"
+            },{
+                "ds2_id": "7.2.2",
+                "ds2_title": "Set your new desired PIN code.",
+                "imagePath":"img/faq/7/2/a1.webp"
+            },{
+                "ds2_id": "7.2.3",
+                "ds2_title": "After nominating new PIN you will be redirected to the selfie verification page. Click Allow if you will be ask to allow ASENSO App to record audio and to take pictures and record video, then take 3 selfie picture, this will be subject for verification and approval.\n\nIn case the device and number was stolen or hacked and the feature (Forgot PIN) was used to gain access to the account the selfie of the maker of the request will be checked with the photo of the client taken during the account opening/updating. The CSR shall disapprove the request if the selfies and the photo does not matched.",
+                "imagePath":"img/faq/7/2/a3.webp"
+            },{
+                "ds2_id": "7.2.4",
+                "ds2_title": "After taking selfies click the submit button. Once the request is submitted a prompt will notify you that the request was successfully submitted and that it will be subject for approval of CSR.",
+                "imagePath":"img/faq/7/2/a4.webp"
+            },{
+                "ds2_id": "7.2.5",
+                "ds2_title": "An SMS and Email notification will be received once the request is approved.",
+                "imagePath":"img/faq/7/2/a5.webp"
+            }]
+        }]
+    }
+];
+
+    function renderSubItems(ds3Items) {
+        if (!ds3Items || ds3Items.length === 0) return '';
+        let html = '<div class="sub-items">';
+        ds3Items.forEach(ds3 => {
+            html += `<div class="sub-section-title">${ds3.ds3_title}</div>`;
+            if (ds3.ds_4 && ds3.ds_4.length > 0) {
+                ds3.ds_4.forEach(ds4 => {
+                    html += `<div class="sub-item"><span class="sub-item-bullet">&bull;</span> ${ds4.ds4_title}</div>`;
+                    if (ds4.ds_5 && ds4.ds_5.length > 0) {
+                        html += '<div style="padding-left:16px">';
+                        ds4.ds_5.forEach(ds5 => {
+                            html += `<div class="sub-item"><span class="sub-item-bullet">-</span> ${ds5.ds5_title}</div>`;
+                        });
+                        html += '</div>';
+                    }
+                });
+            }
+        });
+        html += '</div>';
+        return html;
+    }
+
+    function renderFAQ(data) {
+        const container = document.getElementById('faq-container');
+        data.forEach((category, catIdx) => {
+            let catHtml = `<div class="category">`;
+            catHtml += `<div class="category-title" onclick="toggleCategory(this)">${category.title}</div>`;
+            catHtml += `<div class="category-content">`;
+
+            category.ds_1.forEach((q) => {
+                catHtml += `<div class="question">`;
+                catHtml += `<div class="question-title" onclick="toggleQuestion(this)">${q.title}</div>`;
+                catHtml += `<div class="question-body">`;
+                if (q.desc) catHtml += `<div class="question-desc">${q.desc}</div>`;
+                if (q.note1) catHtml += `<div class="note"><strong>Note:</strong> ${q.note1}</div>`;
+                if (q.note2) catHtml += `<div class="note">${q.note2}</div>`;
+
+                q.ds_2.forEach((step, stepIdx) => {
+                    catHtml += `<div class="step">`;
+                    catHtml += `<div class="step-header">`;
+                    catHtml += `<div class="step-number">${stepIdx + 1}</div>`;
+                    catHtml += `<div class="step-text">${step.ds2_title}</div>`;
+                    catHtml += `</div>`;
+                    if (step.imagePath) catHtml += `<img class="step-image" src="../${step.imagePath}" alt="${step.ds2_title}" loading="lazy">`;
+                    if (step.ds_3) catHtml += renderSubItems(step.ds_3);
+                    catHtml += `</div>`;
+                });
+
+                catHtml += `</div></div>`;
+            });
+
+            catHtml += `</div></div>`;
+            container.innerHTML += catHtml;
+        });
+    }
+
+    function toggleCategory(el) {
+        el.classList.toggle('active');
+        el.nextElementSibling.classList.toggle('show');
+    }
+
+    function toggleQuestion(el) {
+        el.classList.toggle('active');
+        el.nextElementSibling.classList.toggle('show');
+    }
+
+    renderFAQ(faqData);
+    </script>
+</body>
+</html>
