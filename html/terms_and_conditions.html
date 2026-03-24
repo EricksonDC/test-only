@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASENSO - Terms and Conditions</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #fff;
+            color: #333;
+            line-height: 1.7;
+            padding: 20px 16px 60px;
+            font-size: 14px;
+        }
+        h1 {
+            font-size: 20px;
+            color: #1a237e;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .intro {
+            margin-bottom: 24px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-header {
+            color: #1a237e;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        .clause {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            text-indent: -0px;
+        }
+        .sub-clause {
+            margin-bottom: 8px;
+            padding-left: 48px;
+        }
+        .sub-sub-clause {
+            margin-bottom: 8px;
+            padding-left: 72px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Terms and Conditions</h1>
+
+    <div id="content"></div>
+
+    <script>
+    // Configurable values — update these to dynamically change partner/app name
+    const APP_NAME = 'ASENSO';
+    const PARTNER_NAME = new URLSearchParams(window.location.search).get('partner') || 'Rural Bank Of Guinobatan, Inc';
+
+    const sections = [
+        {
+            intro: `By enrolling in ${PARTNER_NAME} Mobile Banking Facility (ASENSO APP), the Client agrees to the following terms and conditions, which are in addition to those contained in the Terms and Conditions of ${PARTNER_NAME} Deposit Products and Services and Client Information Sheet and other related contracts that the Client signed when he/she opened his/her deposit account/s.`
+        },
+        {
+            header: `A. ${APP_NAME} APP`,
+            clauses: [
+                `1. ASENSO APP is a secure electronic MOBILE Banking Facility that allows the Bank Clients, who signed up for the service, to perform certain transactions on their accounts mobile phone. The transactions that may be performed through ASENSO APP include account balance inquiry, transaction inquiry, fund transfer intra and interbank thru Pesonet and Instapay, bills payment, loan application, loan repayment and load purchase. The Bank shall provide the Client with instructions on how to use ASENSO APP. It is understood that the Bank shall entertain requests for the above-enumerated services relative only to the Client's enrolled deposit account/s.`
+            ]
+        },
+        {
+            header: `B. ACCESS ${APP_NAME} APP`,
+            clauses: [
+                `1. The Client can access any of his enrolled account/s with the use of Mobile Password, which the Client shall formulate.`,
+                `2. Mobile Password shall be known only to the Client. The Client shall have the sole responsibility of keeping the confidentiality of his Mobile Password. Client shall be notified through ${APP_NAME} APP Welcome Screen when the Mobile Password needs to be changed. However, the Client may, at his option, change his Mobile Password using the tool provided in ${APP_NAME} APP anytime he deems necessary. Should the Mobile Password be changed prior to expiry, the validity period of the changed Mobile Password shall start from the date of change.`,
+                `3. The Client agrees to keep the Mobile Password confidential at all times. The Client shall be solely responsible for all transactions made in his deposit/linked accounts through the use of his Mobile Password. The Bank shall not be liable for any loss arising from the unauthorized use of the Mobile Password. Any transaction/instructions effected using the Mobile Password shall be conclusively presumed to be authorized by the Client and deemed done at Client's risk and with Client's authority.`,
+                `4. Banking transactions are permitted through the ${APP_NAME} APP upon recognition by the system of the Mobile Password, for fund transfers and bills payment transactions. The Bank shall have no obligation to verify the authenticity of any transaction purporting to have been performed by the Client who keyed in valid Mobile Password, or fund transfers and bills payment transactions.`
+            ]
+        },
+        {
+            header: 'C. MOBILE BANKING FACILITY',
+            clauses: [
+                `1. In order to access ${PARTNER_NAME} App, the Client must:`,
+            ],
+            subClauses: [
+                `Have a valid Cellphone number registered on the APP. The same credentials will be used to access the Mobile Phone Banking Facility.`,
+                `A mobile phone that supports SMS and capable of downloading/running the ${APP_NAME} APP. ${APP_NAME} APP Mobile Phone Banking application is a program which can be used by the Client to initiate and authorize banking transactions through the use of a mobile phone or device. The ${APP_NAME} APP Mobile Phone Banking application must be successfully installed in the Client's mobile phone.`
+            ],
+            clausesAfter: [
+                `2. A default Mobile Password will be sent to the Client's upon successful registration, client needs to change his/her Mobile Password upon first login to ${APP_NAME} App as a requirement for security purposes.`,
+                `3. Aside from changing Mobile Password on first log in, client is also required to answer security question for account recovery.`,
+                `4. To help protect the Client's information and data, the Client commits not to download or access the ${APP_NAME} APP Mobile Phone Banking application in a device with unauthorized modifications, otherwise known as Jailbroken or Rooted devices. The Bank will not be held responsible for any application or security issues that may be encountered in devices with unauthorized modifications.`
+            ]
+        },
+        {
+            header: 'D. TRANSACTIONS',
+            clauses: [
+                `1. The following transactions can be done using ASENSO APP:`
+            ],
+            subSections: [
+                {
+                    title: 'i. Account Balance Inquiry',
+                    text: `The Client may inquire the current and available or withdrawable balance of his enrolled account.`
+                },
+                {
+                    title: 'ii. Transaction Inquiry',
+                    text: `The Client may view the details of his account's transactions during the last ninety (90) day period.`
+                },
+                {
+                    title: 'iii. Fund Transfer/Bills Payment',
+                    texts: [
+                        `Only cleared and withdrawable balances from the Client's account shall be considered for fund transfer or bills payment. In case of insufficient funds, the fund transfer or bills payment request shall be rejected and the Bank shall have no liability arising from its non-implementation.`,
+                        `Only transfers between accounts with the same currency is allowed in the PASS SENSO APP system.`,
+                        `The Client's account will be debited with the amount of any transfer and/or other transaction effected by the use of the facility including charges that may be imposed by the Bank.`,
+                        `For interbank fund transfer, charges shall be automatically debited from the Client's account.`,
+                        `In allowing fund transfers through the Bank's channels, the Bank shall not be held liable for any losses or damages which may be suffered by the Client, transferee or other third party in any way directly or indirectly arising out of or in connection with the use of the Bank channels.`,
+                        `In accepting bills payment/funds transfer to other banks, the Bank merely serves as conduit between the Client and the biller/other banks and shall therefore not be answerable for the discrepancies due to the fault of the Client such as, but not limited to, incorrect entry of subscriber number/beneficiary account number by the Client in the system, etc. nor shall the Bank be held liable for any action which may arise between the Client and the Biller/other banks, the latter hereby agreeing to hold the Bank free and harmless whatsoever from any liability for damages including but not limited to losses, expenses, costs that the Client or Biller may incur as a result of the Bank's execution of the said transaction.`,
+                        `In case of erroneous fund transfer or bills payment, the Client shall refer the error to the Bank's Customer Service Support, or the Client's Maintaining Branch within twenty four (24) hours or the next banking day after the fund transfer or bills payment was made. However, the Bank shall reverse the erroneous fund transfer or bills payment only with the written authorization from the transferee or biller.`,
+                        `The Client agrees that the Bank may contact the Client through the Bank Mail with regard to new Bank products and services as well as any concerns related to ${PARTNER_NAME} services.`,
+                        `The Bank shall accept electronic messages exchanged via the Bank Mail as conclusive and binding on the Client.`
+                    ]
+                }
+            ],
+            clausesAfter: [
+                `2. The Bank will reject transactions under any of the following circumstances:`,
+            ],
+            rejectReasons: [
+                `If the available balance of the Client's account is not sufficient to cover both the transaction amount and the corresponding charge`,
+                `If the Client's account is dormant or inactive, closed, frozen or garnished`,
+                `If the Client has exceeded the transaction limits imposed by the Bank`,
+                `If the Client did not pass the user authentication and transaction verification routine of the facility`,
+                `If the Bank has reasonable grounds to suspect unauthorized or fraudulent use of Client's access credentials`
+            ],
+            finalClauses: [
+                `3. The Bank shall, on a best-effort basis, carry-out the instructions received from the Client through the Mobile Phone Banking Facility, within a reasonable time frame. However, the Bank does not guarantee consistent and immediate execution of such instructions as the delivery of mobile banking services depends on the infrastructure, connectivity and services provided by intermediaries such as mobile phone companies. The Bank shall not be liable for any loss or damage (whether direct or indirect), costs, charges or expenses incurred by the Client due to delay or inability of the Bank to provide the mobile phone banking service.`,
+                `4. The Bank reserves the right to limit the amount or frequency of transactions that the Client may course through ${APP_NAME} APP. The Bank also reserves the right to suspend the Client's access to the system and to terminate any or all the services offered through the facility without prior notice.`,
+                `5. Each successful transaction coursed through ${APP_NAME} APP shall be evidenced by system-generated transaction record, transaction slip or reference number that may be used by the Bank as basis in investigating any complaints lodged by the Client.`,
+                `6. Any and all transactions coursed through any of the channels by the Client shall be binding and conclusive upon the Accountholder. For Joint "or" accounts, it is understood that all transactions done through any of the above-enumerated services are binding on the co-depositors irrespective of who among the accountholders initiated the transactions. As such, the Client/s shall be responsible for all consequences of such transactions initiated relative to his/their corresponding deposit account/s.`,
+                `7. The display or printed output produced by the Client at the time of operation of the mobile banking facility is merely the Client's personal record of the transaction and shall not be construed as the Bank's record of the relevant transactions. In case of discrepancies, the Bank's own record of transactions maintained through computer systems or otherwise shall be accepted as conclusive and binding for all purposes unless any discrepancy is pointed out by the Client within a week from the date of sending the periodical statement to the Client.`
+            ]
+        },
+        {
+            header: 'E. RESPONSIBILITY OF THE CLIENT',
+            clauses: [
+                `1. The Client has the responsibility to procure all the necessary equipment, with the corresponding adequate safeguards against malicious threats, and maintain the same in good working condition for the proper use of ${APP_NAME} APP. The Client shall likewise undertake not to use faulty, defective or non-secure equipment to access the ${APP_NAME} APP or to use the facility in any unauthorized or fraudulent transactions.`,
+                `2. The Bank shall not be liable for any loss or misplacement of funds caused by unauthorized transactions.`
+            ]
+        },
+        {
+            header: 'F. AVAILABILITY',
+            clauses: [
+                `1. ${APP_NAME} APP shall be available 24 hours a day, 7 days a week, except when the facility is on off-line condition for any reason. ${APP_NAME} APP shall also depend on the availability of connection of the internet or mobile phone company.`,
+                `2. The Mobile Phone Banking Facility is available only within the cellular circles of the Client's telephone service provider or in the circles forming part of the roaming network of such service providers.`
+            ]
+        },
+        {
+            header: 'G. LIMITATION OF LIABILITY',
+            clauses: [
+                `1. The Bank shall not be liable to the Client for his inability to use the facility due to line problems, computer hardware or software problems including viruses or bugs, or related/incidental problems that may be attributed to the services provided by any service provider or information service provider.`,
+                `2. The Client shall hold the Bank and/or any of its officers or representatives free and harmless from any delay, loss, liability, demand or claim of whatever nature due to any error occurring in connection with or resulting from the use of the ${APP_NAME} APP, including but not limited to computer error, computer off-line or telephone and/or mobile phone line interruption, or any other cause not reasonably within the Bank's control that may affect the timeliness and accuracy of the instructions sent and the processing of the transaction. The Client waives all rights of action against the Bank in relation thereto.`,
+                `3. In the absence of any gross negligence, fraud, fault or willful default on the part of the Bank or its employees, the Client shall indemnify the Bank, its employees or information provider and their respective officers and employees against all liabilities, claims, demand, losses, damages, cash, charges and expenses of any kind that may be incurred by any of them and all actions or proceedings which may be brought by third parties in connection with the provision of the services.`
+            ]
+        },
+        {
+            header: 'H. TERMINATION/SUSPENSION OF AGREEMENT/USE',
+            clauses: [
+                `1. The Bank reserves the right to terminate/suspend the agreement covering the services, facilities, and channels or to terminate/suspend the current and future use of the same in whole or in part, if among others, the Client provides any information that is untrue, inaccurate, not current or incomplete, or the Bank has reasonable grounds to suspect that such information is untrue, inaccurate, not current or incomplete, at any time without prior notice to the Client.`,
+                `2. The Bank reserves the right to cancel Client's access privilege to ${APP_NAME} APP if at any time, at the sole discretion of the Bank and without prior notice to the Client, the Bank find out that the account is fictitious and/or is being used for fraudulent purposes, or improperly handled, or for any other reason that the Bank may deem necessary to protect its interest.`,
+                `3. The Bank may suspend or terminate the Client's electronic banking service without prior notice if the Client breached any of the Terms and Conditions hereof or if the Bank learns of the Client's death, bankruptcy or lack of legal capacity or other reasons which, in the Bank's opinion, would prejudice the interests of both the Bank and/or the Client.`,
+                `4. The arrangement between the Bank and any of its partners, billers, service providers and merchants related to the provision of any of the ${APP_NAME} APP facilities may be terminated without prior notice to the Client.`,
+                `5. The Client may request for termination of the ${APP_NAME} APP by giving a prior written notice of at least 10 banking days to the Bank. The Client shall remain responsible for any mobile banking transactions made on his account/s through the service prior to the time of such cancellation of the ${APP_NAME} APP. The Agreement comprised in these Terms and Conditions shall be deemed to remain in full force and effect for all pending transaction scheduled prior to the effectivity of the termination. These shall still be processed unless the Client cancels/deletes said transactions. Also, the termination of ASENSO APP shall not prejudice the Client's liability in respect of transactions committed or omitted prior to termination thereof. The Bank may, for security and other reasons, discontinue the ${APP_NAME} APP.`
+            ]
+        },
+        {
+            header: 'I. AUTHORITY AND CONSENT ON PROCESSING PERSONAL INFORMATION',
+            clauses: [
+                `1. ${PARTNER_NAME} will keep my information I provided through this portal including but not limited to, my account information, transactions, and personal information necessary to carry out my registration and use of this facility. I hereby give my consent for the Bank, its accredited agencies, and the RBG Affiliate Companies to:`
+            ],
+            consentItems: [
+                `i. Collect, store, use, and process my personal data`,
+                `ii. Share and disclose my information to the following:`,
+            ],
+            consentDetails: [
+                `${PARTNER_NAME} (among employees of the Bank, advisers, auditors, agents, and representatives) and RBG Affiliate Companies;`,
+                `Credit bureaus, including, but not limited to, the Credit Information Corporation (CIC) pursuant to Republic Act No. 9510;`,
+                `Bank and non-bank external supervisory and regulatory bodies of the Government of the Philippines as required by laws; and`,
+                `Outsourced companies which ${PARTNER_NAME} and the RBG Affiliate Companies have engaged or may engage for marketing, promotional, and other purposes as may be necessitated by given circumstances`
+            ],
+            clausesAfter: [
+                `2. I recognize that my continued access and usage into this ${PARTNER_NAME} System will constitute my consent mentioned above.`
+            ]
+        },
+        {
+            header: `J. ${PARTNER_NAME} DATA PRIVACY STATEMENT`,
+            clauses: [
+                `1. The PARTIES shall comply with the requirements of Republic Act No. 10173, otherwise known as the "Data Privacy Act of 2012", and all other related rules, orders and regulations as may be provided by the National Privacy Commission in relation to the collection, storage, usage, disclosure/sharing, disposal and protection (processing) of Personal Data obtained in connection with this Agreement. ${PARTNER_NAME} shall ensure the confidentiality of any personal information that comes to its knowledge and possession, subject to processing as may be necessary and in accordance with the legitimate interest of complying with a legal obligation.`
+            ]
+        },
+        {
+            header: 'K. GENERAL AGREEMENT',
+            clauses: [
+                `1. The Bank reserves the right to determine the scope of the facility, set or change the cut-off time, transaction limits, modify, restrict, withdraw, cancel, disconnect, deactivate, suspend or discontinue any services without prior notice to the Client.`,
+                `2. The Bank may amend at any time any of these Terms and Conditions as it may deem necessary for the best interest of both parties: provided, such amendments are not contrary to banking laws and regulations of the Bangko Sentral ng Pilipinas (BSP).`,
+                `3. The Bank may terminate this Agreement at any time for whatever reason with prior notice to the Client.`,
+                `4. Other terms and conditions of the Bank's savings or current, ATM and POS services shall be deemed part of this Agreement in so far as they are not inconsistent herewith.`,
+                `5. The venue of all legal actions or proceedings arising out of or in connection with these Terms and Conditions shall be brought only in the proper courts of Municipality of Guinobatan, Albay to the exclusion of all other venues.`
+            ]
+        }
+    ];
+
+    function render() {
+        const container = document.getElementById('content');
+        let html = '';
+
+        sections.forEach(s => {
+            if (s.intro) {
+                html += `<p class="intro">${s.intro}</p>`;
+                return;
+            }
+
+            html += '<div class="section">';
+            if (s.header) html += `<div class="section-header">${s.header}</div>`;
+
+            if (s.clauses) {
+                s.clauses.forEach(c => { html += `<p class="clause">${c}</p>`; });
+            }
+            if (s.subClauses) {
+                s.subClauses.forEach(c => { html += `<p class="sub-clause">${c}</p>`; });
+            }
+            if (s.subSections) {
+                s.subSections.forEach(ss => {
+                    html += `<p class="sub-clause"><strong>${ss.title}</strong></p>`;
+                    if (ss.text) html += `<p class="sub-sub-clause">${ss.text}</p>`;
+                    if (ss.texts) ss.texts.forEach(t => { html += `<p class="sub-sub-clause">${t}</p>`; });
+                });
+            }
+            if (s.clausesAfter) {
+                s.clausesAfter.forEach(c => { html += `<p class="clause">${c}</p>`; });
+            }
+            if (s.rejectReasons) {
+                s.rejectReasons.forEach(r => { html += `<p class="sub-clause">${r}</p>`; });
+            }
+            if (s.consentItems) {
+                s.consentItems.forEach(c => { html += `<p class="sub-clause">${c}</p>`; });
+            }
+            if (s.consentDetails) {
+                s.consentDetails.forEach(c => { html += `<p class="sub-sub-clause">${c}</p>`; });
+            }
+            if (s.finalClauses) {
+                s.finalClauses.forEach(c => { html += `<p class="clause">${c}</p>`; });
+            }
+
+            html += '</div>';
+        });
+
+        container.innerHTML = html;
+    }
+
+    render();
+    </script>
+</body>
+</html>
